@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faire tourner une div</title>
+	<meta charset="utf-8">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing:border-box;
+		}
+		#game{
+			width: 70%;
+			align-items: center;
+			background-color: black;
+		}
+		#image{
+
+			display: block;
+			width: 400px;
+			border-radius: 100%;
+			height:400px;
+			margin: 50px auto;
+
+		}
+
+		#fleche{
+			width: 10px;
+			
+			height: 15px;
+			border-radius: 100% 100% 30px 30px;
+			background-color: orangered;
+			position: relative;
+			margin:auto;
+			top: 50px;
+
+		}
+
+		#action{
+			width: 60%;
+			background-color: orangered;
+			font-size: 1.6em;
+			border:none;
+			border:1px solid black;
+			color: white;
+			margin-left: 150px;
+		}
+
+		#tools{
+			width: 30%;
+			flex-wrap: wrap;
+			position: relative;
+			border: 2px solid black;
+			text-align: center;
+			padding-left: 70px;
+			line-height: 100px;
+
+		}
+
+		#tools  input{
+			width: 200px;
+			height: 50px;
+			text-align: center;
+			color: orangered;
+			font-size: 1.5em;
+		}
+
+		
+
+		#plateau{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+		}
+		#compte{
+			border:2px solid black;
+			margin-bottom: 100px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="plateau">
+		<div id="game">
+			<div id="fleche"></div>
+			<img src="roue.jpeg" id="image">
+			<button id="action">Tourner</button>
+			</div>
+		<div id="tools">
+			<h1>Fonctionnalités</h1>
+
+			<h3 id="compte">COMPTE : 1000</h3>
+
+
+			<input type="number" name="" id="mise">
+		</div>
+	</div>
+	
+
+
+
+
+	<script>
+	
+		const action = document.getElementById('action');
+		const compteId = document.getElementById('compte');
+		const mise = document.getElementById('mise');
+		let compte = 1000;
+
+		function calculArgent(argent) {
+	  		compte += argent;
+	  		compteId.innerHTML = compte;
+		}
+
+
+
+		function argentAleatoire(deg) {
+		  	let valeur = deg / 360; // degré temporaire / 360
+		  	valeur = (valeur - parseInt(valeur.toString().split(".")[0])) * 360; // calule et trouve la valeur du degré normal en 360, grace au degré temporaire
+		  setTimeout(() => {
+		    switch (true) {
+		      case valeur > 0 && valeur <= 15:
+		        calculArgent(700);
+		        alert("Vous avez gagné(e) 700 FcFa!");
+		        break;
+		      case valeur > 15 && valeur <= 30:
+		        calculArgent(600);
+		        alert("Vous avez gagné(e) 600 FcFa!");
+		        break;
+		      case valeur > 30 && valeur <= 45:
+		        calculArgent(3000);
+		        alert("Vous avez gagné(e) 3000 FcFa!");
+		        break;
+		      case valeur > 45 && valeur <= 60:
+		        alert("Oup, c'est perdu !");
+		        break;
+		      case valeur > 60 && valeur <= 75:
+		        calculArgent(500);
+		        alert("Vous avez gagné(e) 500 FcFa!");
+		        break;
+		      case valeur > 75 && valeur <= 90:
+		        calculArgent(750);
+		        alert("Vous avez gagné(e) 750 FcFa!");
+		        break;
+		      case valeur > 90 && valeur <= 105:
+		        calculArgent(600);
+		        alert("Vous avez gagné(e) 600 FcFa!");
+		        break;
+		      case valeur > 105 && valeur <= 120:
+		        calculArgent(450);
+		        alert("Vous avez gagné(e) 450 FcFa!");
+		        break;
+		      case valeur > 120 && valeur <= 135:
+		        calculArgent(300);
+		        alert("Vous avez gagné(e) 300 FcFa!");
+		        break;
+		      case valeur > 135 && valeur <= 150:
+		        setTimeout(roueTourne, 1000);
+		        break;
+		      case valeur > 150 && valeur <= 165:
+		        calculArgent(800);
+		        alert("Vous avez gagné(e) 800 FcFa!");
+		        break;
+		      case valeur > 165 && valeur <= 180:
+		        calculArgent(700);
+		        alert("Vous avez gagné(e) 700 FcFa!");
+		        break;
+		      case valeur > 180 && valeur <= 195:
+		        calculArgent(600);
+		        alert("Vous avez gagné(e) 600 FcFa!");
+		        break;
+		      case valeur > 195 && valeur <= 210:
+		        alert("Oup !!!");
+		        break;
+		      case valeur > 210 && valeur <= 225:
+		        calculArgent(900);
+		        alert("Vous avez gagné(e) 900 FcFa!");
+		        break;
+		      case valeur > 225 && valeur <= 240:
+		        calculArgent(400);
+		        alert("Vous avez gagné(e) 400 FcFa!");
+		        break;
+		      case valeur > 240 && valeur <= 255:
+		        calculArgent(500);
+		        alert("Vous avez gagné(e) 500 FcFa!");
+		        break;
+		      case valeur > 255 && valeur <= 270:
+		        calculArgent(1000);
+		        alert("Vous avez gagné(e) 1000 FcFa!");
+		        break;
+		      case valeur > 270 && valeur <= 285:
+		        calculArgent(650);
+		        alert("Vous avez gagné(e) 650 FcFa!");
+		        break;
+		      case valeur > 285 && valeur <= 300:
+		        calculArgent(400);
+		        alert("Vous avez gagné(e) 400 FcFa!");
+		        break;
+		      case valeur > 300 && valeur <= 315:
+		        calculArgent(300);
+		        alert("Vous avez gagné(e) 300 FcFa!");
+		        break;
+		      case valeur > 315 && valeur <= 330:
+		        calculArgent(800);
+		        alert("Vous avez gagné(e) 800 FcFa!");
+		        break;
+		      case valeur > 330 && valeur <= 345:
+		        calculArgent(500);
+		        alert("Vous avez gagné(e) 500 FcFa!");
+		        break;
+		      case valeur > 345 && valeur <= 360:
+		        calculArgent(350);
+		        alert("Vous avez gagné(e) 350 FcFa!");
+		        break;
+		    }
+		  }, 5000);
+	}
+
+
+
+		const play = ()=>{
+
+			if(mise.value == '' || mise.value <= 0 || mise.value >= compte){
+				alert("entrer une mise correcte");
+				return;
+			}
+			const degre = Math.floor(Math.random()*5000);
+			roue.style.transition = "all 5s ease-out";
+			roue.style.transform = `rotate(${degre}deg)`;
+
+			argentAleatoire(degre);
+
+		}
+
+		const roue = document.getElementById('image');
+		action.addEventListener("click",play);
+
+
+
+	</script>
+</body>
+</html>
